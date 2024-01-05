@@ -13,6 +13,5 @@ phases:
   post_build:
     commands:
       - echo "Started"
-      - aws lambda update-function-code --function-name go-lamda-sample --zip-file fileb://main.zip > update_log.txt 2>&1
-      - cat update_log.txt
+      - aws lambda update-function-code --function-name go-lamda-sample --zip-file fileb://main.zip
       - echo "DONE!!"
