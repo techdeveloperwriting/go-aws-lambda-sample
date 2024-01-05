@@ -8,10 +8,12 @@ phases:
     commands:
       - go mod download
       - go build -o main
-      - zip main.zip main
+      - zip -g main.zip main
 artifacts:
   files: main.zip
 
 post_build:
   commands:
+    - echo "Started"
     - aws lambda update-function-code --function-name go-lamda-sample --zip-file fileb://main.zip
+    - echo "DONE!!"
