@@ -12,7 +12,7 @@ import (
 func Handler(_ context.Context, r events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
 	log.Println("Hello Handler")
 	data, _ := json.Marshal(map[string]interface{}{
-		"message": "hello world Naresh",
+		"message": "hello world Golang",
 		"event":   r,
 	})
 	log.Println("Hello Handler Data", string(data))
